@@ -13,6 +13,8 @@ const goals = [
   },
 ];
 
+// @desc get all goals
+// @route GET /api/goals
 const getGoals = (req, res) => {
   res.status(200).json(goals);
 };
