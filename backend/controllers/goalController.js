@@ -16,14 +16,14 @@ const goals = [
 // @desc get all goals
 // @route GET /api/goals
 // @access Private
-const getGoals = (req, res) => {
+const getGoals = async (req, res) => {
   res.status(200).json(goals);
 };
 
 // @desc get single goal
 // @route GET /api/goals:id
 // @access Private
-const getGoal = (req, res) => {
+const getGoal = async (req, res) => {
   console.log(req.params);
   const id = parseInt(req.params.id);
   res.status(200).json(goals.find((goal) => goal.id === id));
@@ -32,7 +32,7 @@ const getGoal = (req, res) => {
 // @desc create a goal
 // @route POST /api/goals
 // @access Private
-const createGoal = (req, res) => {
+const createGoal = async (req, res) => {
   if (!req.body.text) {
     res.status(400);
     throw new Error('Please add a text field');
@@ -43,14 +43,14 @@ const createGoal = (req, res) => {
 // @desc update a goal
 // @route PUT /api/goals/:id
 // @access Private
-const updateGoal = (req, res) => {
+const updateGoal = async (req, res) => {
   res.status(200).json(goals);
 };
 
 // @desc delete a goal
 // @route DELETE /api/goals/:id
 // @access Private
-const deleteGoal = (req, res) => {
+const deleteGoal = async (req, res) => {
   res.status(200).json(goals);
 };
 
