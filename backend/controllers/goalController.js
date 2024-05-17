@@ -33,6 +33,7 @@ const getGoal = (req, res) => {
 // @route POST /api/goals
 // @access Private
 const createGoal = (req, res) => {
+  console.log(req.body);
   res.status(200).json(goals);
 };
 
