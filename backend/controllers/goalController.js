@@ -33,7 +33,10 @@ const getGoal = (req, res) => {
 // @route POST /api/goals
 // @access Private
 const createGoal = (req, res) => {
-  console.log(req.body);
+  if (!req.body.text) {
+    res.status(400);
+    throw new Error('Please add a text field');
+  }
   res.status(200).json(goals);
 };
 
